@@ -1,8 +1,8 @@
 {
   "development": {
-    "username": "ilkhom",
-    "password": "me1980",
-    "database": "jeopardy",
+    "username": "elbrus_practice",
+    "password": 7236,
+    "database": "game-react",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },

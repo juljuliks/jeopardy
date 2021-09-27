@@ -1,5 +1,4 @@
 import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
 import CustomForm from '../Form';
 import { loginUser } from '../../redux/actions/users';
 
@@ -43,7 +42,6 @@ const formItems = [
 ];
 
 export default function RegisterPage() {
-  const history = useHistory();
   const dispatch = useDispatch();
   function onSubmit(values) {
     fetch('/auth/register', {
@@ -52,7 +50,6 @@ export default function RegisterPage() {
       body: JSON.stringify(values),
     }).then((data) => data.json())
       .then((data) => dispatch(loginUser(data)))
-      .then(() => history.push('/notebooks'))
       .catch((e) => console.log(e));
   }
 
