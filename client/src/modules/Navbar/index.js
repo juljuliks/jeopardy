@@ -14,31 +14,33 @@ export default function Navbar({ isAuth }) {
       .then(() => dispatch(logoutUser()));
   }
 
+  // if (!isAuth) {
+  //   return (
+  //     <Header>
+  //       <Menu theme="dark" mode="horizontal">
+  //         <Menu.Item key="Register">
+  //           <Link to="/register">Register</Link>
+  //         </Menu.Item>
+  //         <Menu.Item key="Login">
+  //           <Link to="/login">Login</Link>
+  //         </Menu.Item>
+  //       </Menu>
+  //     </Header>
+  //   );
+  // }
+
   if (!isAuth) {
     return (
       <Header>
         <Menu theme="dark" mode="horizontal">
-          <Menu.Item key="Register">
-            <Link to="/register">Register</Link>
+          <Menu.Item key="Home">
+            <Link to="/home">Home</Link>
           </Menu.Item>
-          <Menu.Item key="Login">
-            <Link to="/login">Login</Link>
+          <Menu.Item key="Logout">
+            <Button type="link" onClick={logoutHandler}>Logout</Button>
           </Menu.Item>
         </Menu>
       </Header>
     );
   }
-
-  return (
-    <Header>
-      <Menu theme="dark" mode="horizontal">
-        <Menu.Item key="Home">
-          <Link to="/home">Home</Link>
-        </Menu.Item>
-        <Menu.Item key="Logout">
-          <Button type="link" onClick={logoutHandler}>Logout</Button>
-        </Menu.Item>
-      </Menu>
-    </Header>
-  );
 }
