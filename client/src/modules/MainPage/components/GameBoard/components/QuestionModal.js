@@ -1,11 +1,19 @@
 /* eslint-disable no-unused-vars */
-import { Modal, Button, Radio } from 'antd';
+import {
+  Modal, Button, Radio, Card,
+} from 'antd';
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import CustomCountdown from '../../Countdown';
 import { endGame, updateGame } from '../../../../../redux/actions/game';
+
+const gridStyle = {
+  maxWwidth: '10%',
+  textAlign: 'center',
+  cursor: 'pointer',
+};
 
 const RadioWrapper = styled.div`
   display: flex;
@@ -95,9 +103,9 @@ export default function QuestionModal({ title, question }) {
 
   return (
     <>
-      <Button type="text" onClick={showModal}>
+      <Card.Grid style={gridStyle} onClick={showModal}>
         {question.pricePoint}
-      </Button>
+      </Card.Grid>
       <Modal
         title={<CustomCountdown />}
         visible={isModalVisible}

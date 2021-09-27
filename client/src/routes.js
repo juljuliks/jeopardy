@@ -7,7 +7,7 @@ import PrivatRoute from './modules/AuthPage/PrivatRoute';
 export default function useRouter(isAuthenticated) {
   return (
     <Switch>
-      <PrivatRoute condition={!isAuthenticated} fallback="/login" path="/home">
+      <PrivatRoute condition={isAuthenticated} fallback="/login" path="/home">
         <MainPage />
       </PrivatRoute>
       <PrivatRoute condition={!isAuthenticated} fallback="/home" path="/login" exact>

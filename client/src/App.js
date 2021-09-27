@@ -8,7 +8,6 @@ import useRouter from './routes';
 function App() {
   const user = useSelector((state) => state.user);
   const isAuthenticated = !!user.id;
-  // const isAuthenticated = true;
   const dispatch = useDispatch();
   const routes = useRouter(isAuthenticated);
 
