@@ -1,23 +1,23 @@
 {
   "development": {
-    "username": "elbrus_practice",
-    "password": 7236,
-    "database": "",
+    "username": "ilkhom",
+    "password": "me1980",
+    "database": "jeopardy",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "username": "elbrus_practice",
-    "password": 7236,
-    "database": "",
+    "username": "root",
+    "password": null,
+    "database": "database_test",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "mysql"
   },
   "production": {
-    "username": "elbrus_practice",
-    "password": 7236,
-    "database": "",
+    "username": "root",
+    "password": null,
+    "database": "database_production",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "mysql"
   }
 }
