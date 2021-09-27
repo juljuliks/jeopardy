@@ -224,6 +224,240 @@ module.exports = {
         questionId: 15,
         choiceBody: 'Нет',
       },
+
+      {
+        questionId: 16,
+        choiceBody: 'Возводит в степень',
+        isCorrect: true,
+      },
+      {
+        questionId: 16,
+        choiceBody: 'Умножает число само на себя',
+      },
+      {
+        questionId: 16,
+        choiceBody: 'Нет такого оператора',
+      },
+
+      {
+        questionId: 17,
+        choiceBody: 'Сравнивает по ссылке, а не по значению.',
+      },
+      {
+        questionId: 17,
+        choiceBody: 'Сравнивает без приведения типа',
+        isCorrect: true,
+      },
+      {
+        questionId: 17,
+        choiceBody: 'Нет такого оператора',
+      },
+
+      {
+        questionId: 18,
+        choiceBody: 'Да',
+        isCorrect: true,
+      },
+      {
+        questionId: 18,
+        choiceBody: 'Нет',
+      },
+      {
+        questionId: 18,
+        choiceBody: 'В первом выражении ошибка, что еще за «!!» ??',
+      },
+
+      {
+        questionId: 19,
+        choiceBody: '2',
+      },
+      {
+        questionId: 19,
+        choiceBody: '1',
+      },
+      {
+        questionId: 19,
+        choiceBody: 'null',
+        isCorrect: true,
+      },
+      {
+        questionId: 19,
+        choiceBody: '0',
+      },
+      {
+        questionId: 19,
+        choiceBody: 'undefined',
+      },
+
+      {
+        questionId: 20,
+        choiceBody: '0',
+      },
+      {
+        questionId: 20,
+        choiceBody: '1',
+      },
+      {
+        questionId: 20,
+        choiceBody: '2',
+      },
+      {
+        questionId: 20,
+        choiceBody: '3',
+        isCorrect: true,
+      },
+      {
+        questionId: 20,
+        choiceBody: 'true',
+      },
+      {
+        questionId: 20,
+        choiceBody: 'false',
+      },
+
+      {
+        questionId: 21,
+        choiceBody: 'Да',
+        isCorrect: true,
+      },
+      {
+        questionId: 21,
+        choiceBody: 'Нет',
+      },
+
+      {
+        questionId: 22,
+        choiceBody: 'Ничем',
+      },
+      {
+        questionId: 22,
+        choiceBody: 'Function Declareation «поднимаются», а Function Expression – нет',
+        isCorrect: true,
+      },
+      {
+        questionId: 22,
+        choiceBody: 'Function Expression «поднимаются», а Function Declareation – нет.',
+      },
+
+      {
+        questionId: 23,
+        choiceBody: 'Да',
+        isCorrect: true,
+      },
+      {
+        questionId: 23,
+        choiceBody: 'Нет',
+      },
+
+      {
+        questionId: 24,
+        choiceBody: 'Масссив',
+      },
+      {
+        questionId: 24,
+        choiceBody: 'Объект',
+        isCorrect: true,
+      },
+      {
+        questionId: 24,
+        choiceBody: 'Map',
+      },
+      {
+        questionId: 24,
+        choiceBody: 'Set',
+      },
+
+      {
+        questionId: 25,
+        choiceBody: 'Да',
+      },
+      {
+        questionId: 25,
+        choiceBody: 'Нет',
+        isCorrect: true,
+      },
+
+      {
+        questionId: 26,
+        choiceBody: 'null',
+      },
+      {
+        questionId: 26,
+        choiceBody: 'объекты',
+      },
+      {
+        questionId: 26,
+        choiceBody: 'функции',
+      },
+      {
+        questionId: 26,
+        choiceBody: 'другие массивы',
+      },
+      {
+        questionId: 26,
+        choiceBody: 'все вышеперечисленное может хранится в массивах',
+        isCorrect: true,
+      },
+
+      {
+        questionId: 27,
+        choiceBody: 'Да',
+      },
+      {
+        questionId: 27,
+        choiceBody: 'Нет',
+        isCorrect: true,
+      },
+
+      {
+        questionId: 28,
+        choiceBody: '.map',
+      },
+      {
+        questionId: 28,
+        choiceBody: '.sort',
+        isCorrect: true,
+      },
+      {
+        questionId: 28,
+        choiceBody: '.slice',
+      },
+      {
+        questionId: 28,
+        choiceBody: '.concat',
+      },
+
+      {
+        questionId: 29,
+        choiceBody: 'да. map возвращает новый массив, forЕach возвращает undefined',
+        isCorrect: true,
+      },
+      {
+        questionId: 29,
+        choiceBody: 'нет. и map и foreach возвращает новый массив',
+      },
+
+      {
+        questionId: 30,
+        choiceBody: '.flat',
+      },
+      {
+        questionId: 30,
+        choiceBody: '.reduseRight',
+      },
+      {
+        questionId: 30,
+        choiceBody: '.flatMap',
+      },
+      {
+        questionId: 30,
+        choiceBody: '.entries',
+      },
+      {
+        questionId: 30,
+        choiceBody: 'Все вышеперечисленные методы сущеуствуют',
+        isCorrect: true,
+      },
     ], {});
   },
 
