@@ -14,7 +14,7 @@ const gridStyle = {
 export default function BoardRow({ rowData }) {
   return (
     <Row>
-      <Card.Grid hoverable={false} style={gridStyle}>{rowData.categoryTitle}</Card.Grid>
+      <Card.Grid hoverable={false} style={gridStyle}>{rowData.categoryName}</Card.Grid>
       {rowData.questions.map((question) => (
         <QuestionCard key={question.id} question={question} />
       ))}

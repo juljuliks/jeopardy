@@ -12,7 +12,7 @@ export default function QuestionCard({ question }) {
     <Card.Grid
       style={gridStyle}
     >
-      <QuestionModal title={question.questionCost} questionId={question.id} />
+      <QuestionModal question={question} />
     </Card.Grid>
   );
 }
