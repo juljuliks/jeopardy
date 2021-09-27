@@ -1,5 +1,6 @@
+/* eslint-disable no-unused-vars */
 import { Modal, Button, Radio } from 'antd';
-import { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import CustomCountdown from '../../Countdown';
 
@@ -8,8 +9,9 @@ const RadioWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
 `;
+
 export default function QuestionModal({ title, questionId }) {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState(0);
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const showModal = () => {
@@ -18,27 +20,26 @@ export default function QuestionModal({ title, questionId }) {
 
   const handleOk = () => {
     setIsModalVisible(false);
-    console.log(questionId);
+    console.log(value);
   };
 
   const handleCancel = () => {
     setIsModalVisible(false);
   };
 
-  // TODO по id вопроса получить вопрос и варианты ответов
+  // TODO по id вопроса получить варианты ответов
 
   const mockAnswers = [
-    { answerId: 1, answerBody: 'bla bla 1' },
-    { answerId: 2, answerBody: 'bla bla 2' },
-    { answerId: 3, answerBody: 'bla bla 3' },
-    { answerId: 4, answerBody: 'bla bla 4' },
+    { answerId: 1, answerBody: 'bla bla 1', isCorrect: false },
+    { answerId: 2, answerBody: 'bla bla 2', isCorrect: true },
+    { answerId: 3, answerBody: 'bla bla 3', isCorrect: false },
+    { answerId: 4, answerBody: 'bla bla 4', isCorrect: false },
   ];
 
   function changeHandler(e) {
     setValue(e.target.value);
+    // TODO отправить ответ на б
   }
-
-  console.log(value);
 
   return (
     <>

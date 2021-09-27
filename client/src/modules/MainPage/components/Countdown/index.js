@@ -1,8 +1,9 @@
 import { Statistic, Row, Col } from 'antd';
+import { memo } from 'react';
 
 const { Countdown } = Statistic;
 
-export default function CustomCountdown() {
+function CustomCountdown() {
   const deadline = Date.now() + 1000 * 60;
 
   function onFinish() {
@@ -17,3 +18,5 @@ export default function CustomCountdown() {
     </Row>
   );
 }
+
+export default memo(CustomCountdown);

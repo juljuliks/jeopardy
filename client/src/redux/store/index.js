@@ -4,6 +4,12 @@ import rootReducer from '../reducers/rootReducer';
 
 const initialState = {
   user: {},
+  game: {
+    scores: [
+      { catId: 1, score: 0 },
+      { catId: 2, score: 0 },
+    ],
+  },
 };
 
 const store = createStore(

@@ -1,4 +1,3 @@
-'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('Questions', {
@@ -6,7 +5,7 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       categoryId: {
         allowNull: false,
@@ -20,25 +19,25 @@ module.exports = {
         onUpdate: 'CASCADE',
       },
       questionBody: {
-        type: Sequelize.TEXT
+        type: Sequelize.TEXT,
       },
-      correctAnswer: {
-        type: Sequelize.TEXT
-      },
+      // correctAnswer: {
+      //   type: Sequelize.TEXT,
+      // },
       pricePoint: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+      },
     });
   },
   down: async (queryInterface, Sequelize) => {
     await queryInterface.dropTable('Questions');
-  }
+  },
 };
