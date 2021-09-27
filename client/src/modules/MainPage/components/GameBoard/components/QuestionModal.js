@@ -13,7 +13,7 @@ const RadioWrapper = styled.div`
   justify-content: center;
 `;
 
-export default function QuestionModal({ title, questionId }) {
+export default function QuestionModal({ title, question }) {
   const arrOfPoints = useSelector((state) => state.game);
   const dispatch = useDispatch();
   const [choices, setChoices] = useState(null);
@@ -21,11 +21,11 @@ export default function QuestionModal({ title, questionId }) {
   let numOfCorrAnswers;
 
   useEffect(() => {
-    axios.get(`/api/questions/${questionId}/choice`)
+    axios.get(`/api/questions/${question.id}/choice`)
       .then((res) => res.data)
       .then((choicesFromBack) => setChoices(choicesFromBack));
   }, []);
-
+  console.log(choices);
   const [value, setValue] = useState(0);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isGameOn, setGameOn] = useState(true);
@@ -96,7 +96,7 @@ export default function QuestionModal({ title, questionId }) {
   return (
     <>
       <Button type="text" onClick={showModal}>
-        {title}
+        {question.pricePoint}
       </Button>
       <Modal
         title={<CustomCountdown />}
@@ -104,18 +104,21 @@ export default function QuestionModal({ title, questionId }) {
         onOk={handleOk}
         onCancel={handleCancel}
       >
-        <p>Question: blabla bla bla bla?</p>
+        <p>
+          Question:
+          {question.questionBody}
+        </p>
 
         <RadioWrapper>
           <Radio.Group buttonStyle="solid">
             {choices.map((answer) => (
               <Radio.Button
-                key={answer.answerId}
+                key={answer.id}
                 style={{ display: 'block', minWidth: 300 }}
-                value={answer.answerId}
+                value={answer.id}
                 onChange={changeHandler}
               >
-                {answer.answerBody}
+                {answer.choiceBody}
               </Radio.Button>
             ))}
           </Radio.Group>

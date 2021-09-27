@@ -73,12 +73,13 @@ const arr = [
 
 router.get('/', async (req, res) => {
   try{
-     const categories = await Category.findAll({ include: Question, order: sequelize.random(), limit: 3, raw: true });
-     if(categories.length>0){
-       console.log(categories)
-       return res.json(categories)
+     const categories = await Category.findAll({ limit:3, raw: true });
+
+      for await(const category of categories){
+       const questions= await Question.findAll({where:{categoryId:category.id}, raw:true});
+        category.questions = questions;
      }
-  return res.json(arr)
+res.json(categories)
   }catch(err){
     console.log(err);
     res.sendStatus(500).end();
@@ -88,11 +89,9 @@ router.get('/', async (req, res) => {
   router.get('/:id/choice', async (req, res) => {
     try{
       const {id} = req.params;
+      console.log(id)
        const choices = await Choice.findAll({ where:{questionId:id} });
-       if(choices.length>0){
-         return res.json(choices)
-       }
-    return res.json(arr2)
+       res.json(choices)
     }catch(err){
       console.log(err);
       res.sendStatus(500).end();
