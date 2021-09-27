@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "elbrus_practice",
+    "password": 7236,
+    "database": "",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "elbrus_practice",
+    "password": 7236,
+    "database": "",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "elbrus_practice",
+    "password": 7236,
+    "database": "",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
