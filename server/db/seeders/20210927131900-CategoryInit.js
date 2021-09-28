@@ -34,6 +34,9 @@ module.exports = {
       {
         categoryName: 'This',
       },
+      {
+        categoryName: 'React',
+      },
     ], {});
   },
 
