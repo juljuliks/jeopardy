@@ -25,54 +25,55 @@ export default function QuestionModal({ title, question }) {
   const arrOfPoints = useSelector((state) => state.game);
   const dispatch = useDispatch();
   const [choices, setChoices] = useState(null);
-  let score;
-  let numOfCorrAnswers;
+  let totalScore;
+  let correctAnswers;
 
   useEffect(() => {
     axios.get(`/api/questions/${question.id}/choice`)
       .then((res) => res.data)
       .then((choicesFromBack) => setChoices(choicesFromBack));
   }, []);
-  console.log(choices);
+
   const [value, setValue] = useState(0);
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [isGameOn, setGameOn] = useState(true);
-
+  const [isGameOver, setGameOver] = useState(false);
+  const [isOkclicked, setOkClicked] = useState(0);
   const showModal = () => {
     setIsModalVisible(true);
   };
 
   function gameOver() {
-    setGameOn(false);
-    score = arrOfPoints.reduce((acc, cv) => acc + cv, 0);
-    numOfCorrAnswers = arrOfPoints.filter((points) => points > 0).length;
+    setGameOver(true);
+    const filteredState = arrOfPoints.filter((points) => points.pricePoint > 0);
+    correctAnswers = filteredState.length;
+    totalScore = filteredState.reduce((acc, cv) => acc + cv.pricePoint, 0);
+    axios.post('/api/questions/game', ({ totalScore, correctAnswers, arrOfPoints }))
+      .then(() => dispatch(endGame()));
   }
 
-  const handleOk = () => {
-    setIsModalVisible(false);
-    const choiceMade = choices.find((choice) => choice.id === value);
-    if (choiceMade.isCorrect) {
-      dispatch(updateGame(title));
-    } else {
-      dispatch(updateGame(0));
-    }
+  useEffect(() => {
+    console.log('current state of the game===>', arrOfPoints);
     if (arrOfPoints.length === 6) {
       gameOver();
     }
+  }, [isOkclicked]);
+
+  const handleOk = () => {
+    setOkClicked((prev) => prev + 1);
+    setIsModalVisible(false);
+    const choiceMade = choices.find((choice) => choice.id === value);
+
+    if (choiceMade.isCorrect) {
+      dispatch(updateGame({ category: question.categoryId, pricePoint: question.pricePoint }));
+    } else {
+      dispatch(updateGame({ category: question.categoryId, pricePoint: 0 }));
+    }
+    console.log('choice made=>', choiceMade);
   };
 
   const handleCancel = () => {
     setIsModalVisible(false);
   };
-
-  // TODO по id вопроса получить варианты ответов
-
-  // const mockAnswers = [
-  //   { answerId: 1, answerBody: 'bla bla 1', isCorrect: false },
-  //   { answerId: 2, answerBody: 'bla bla 2', isCorrect: true },
-  //   { answerId: 3, answerBody: 'bla bla 3', isCorrect: false },
-  //   { answerId: 4, answerBody: 'bla bla 4', isCorrect: false },
-  // ];
 
   function changeHandler(e) {
     setValue(e.target.value);
@@ -83,22 +84,8 @@ export default function QuestionModal({ title, question }) {
     return <div>no data, yet</div>;
   }
 
-  if (!isGameOn) {
-    return (
-      <>
-        <h3>Game is Over</h3>
-        <div>
-          Your score is
-          {score}
-        </div>
-        <div>
-          Your gave
-          {numOfCorrAnswers}
-          {' '}
-          correct answers out of 6
-        </div>
-      </>
-    );
+  if (isGameOver) {
+    console.log(`Your score is ${totalScore} Your gave ${correctAnswers} correct answers out of 6`);
   }
 
   return (

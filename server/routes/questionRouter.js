@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Category, Question, Choice, sequelize } = require('../db/models');
+const { Category, Question, Choice, sequelize, Game, CategoryStat } = require('../db/models');
 const arr = [
   {
     categoryTitle: 'Blablablabla',
@@ -96,6 +96,21 @@ res.json(categories)
       console.log(err);
       res.sendStatus(500).end();
     }
+})
+
+router.post('/game', async (req, res) => {
+  try{
+    const { totalScore, correctAnswers, arrOfPoints } = req.body;
+    const userId = req.session.user.id;
+    const newGame = await Game.create({userId, totalScore, correctAnswers})
+    for await(let point of arrOfPoints){
+      await CategoryStat.create({gameId:newGame.id, categoryId: point.category, categoryScore:point.pricePoint})
+    }
+    res.sendStatus(200).end();
+  }catch(err){
+    console.log(err);
+    res.sendStatus(500).end();
+  }
 })
 
 

@@ -5,7 +5,6 @@ export const updateGame = (payload) => ({
   payload,
 });
 
-export const endGame = (payload) => ({
+export const endGame = () => ({
   type: END_GAME,
-  payload,
 });
