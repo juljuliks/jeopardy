@@ -30,7 +30,7 @@ const formItems = [
     name: 'password',
     label: 'Password',
     defaultValue: '',
-    password: true,
+    isPassword: true,
     rules: [
       {
         required: true,

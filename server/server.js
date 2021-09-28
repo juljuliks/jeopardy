@@ -3,7 +3,9 @@ const logger = require('morgan');
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 
-const authRouter = require('./routes/auth.router');
+const authRouter = require('./routes/authRouter');
+const questionRouter = require('./routes/questionRouter');
+const statsRouter = require('./routes/statsRouter');
 
 const sessionConfig = {
   store: new FileStore(),
@@ -25,6 +27,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use('/auth', authRouter);
+app.use('/api/questions', questionRouter);
+app.use('/api/stats', statsRouter);
 
 app.listen(4000, () => {
   console.log('server started');
