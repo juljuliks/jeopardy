@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Card } from 'antd';
-import CustomCard from './Card';
+import QuestionModal from './QuestionModal';
 
 const Row = styled.div`
 display: flex;
@@ -11,12 +11,12 @@ const gridStyle = {
   textAlign: 'center',
 };
 
-export default function BoardRow({ rowData, onCardClick }) {
+export default function BoardRow({ rowData }) {
   return (
     <Row>
       <Card.Grid hoverable={false} style={gridStyle}>{rowData.categoryName}</Card.Grid>
       {rowData.questions.map((question) => (
-        <CustomCard key={question.id} question={question} onCardClick={onCardClick} />
+        <QuestionModal key={question.id} question={question} />
       ))}
     </Row>
   );
