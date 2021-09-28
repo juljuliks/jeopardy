@@ -38,8 +38,12 @@ export default function QuestionModal({ title, question }) {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isGameOver, setGameOver] = useState(false);
   const [isOkclicked, setOkClicked] = useState(0);
+  const [isButtonClicked, setButtonClick] = useState(true);
   const showModal = () => {
-    setIsModalVisible(true);
+    if (isButtonClicked) {
+      setIsModalVisible(true);
+      setButtonClick(false);
+    }
   };
 
   function gameOver() {
@@ -59,16 +63,20 @@ export default function QuestionModal({ title, question }) {
   }, [isOkclicked]);
 
   const handleOk = () => {
-    setOkClicked((prev) => prev + 1);
-    setIsModalVisible(false);
-    const choiceMade = choices.find((choice) => choice.id === value);
+    if (value) {
+      setOkClicked((prev) => prev + 1);
+      setIsModalVisible(false);
+      const choiceMade = choices.find((choice) => choice.id === value);
 
-    if (choiceMade.isCorrect) {
-      dispatch(updateGame({ category: question.categoryId, pricePoint: question.pricePoint }));
+      if (choiceMade.isCorrect) {
+        dispatch(updateGame({ category: question.categoryId, pricePoint: question.pricePoint }));
+      } else {
+        dispatch(updateGame({ category: question.categoryId, pricePoint: 0 }));
+      }
+      console.log('choice made=>', choiceMade);
     } else {
-      dispatch(updateGame({ category: question.categoryId, pricePoint: 0 }));
+      setIsModalVisible(true);
     }
-    console.log('choice made=>', choiceMade);
   };
 
   const handleCancel = () => {
@@ -90,11 +98,11 @@ export default function QuestionModal({ title, question }) {
 
   return (
     <>
-      <Card.Grid style={gridStyle} onClick={showModal}>
+      <Card.Grid style={isButtonClicked ? gridStyle : { ...gridStyle, backgroundColor: 'red', color: 'white' }} onClick={showModal}>
         {question.pricePoint}
       </Card.Grid>
       <Modal
-        title={<CustomCountdown />}
+        title={<CustomCountdown closeModal={setIsModalVisible} id={question.categoryId} />}
         visible={isModalVisible}
         onOk={handleOk}
         onCancel={handleCancel}
