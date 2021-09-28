@@ -34,9 +34,9 @@ module.exports = {
       {
         categoryName: 'This',
       },
-      {
-        categoryName: 'React',
-      },
+      // {
+      //   categoryName: 'React',
+      // },
     ], {});
   },
 
