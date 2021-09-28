@@ -36,6 +36,12 @@ export default function Navbar({ isAuth }) {
         <Menu.Item key="Home">
           <Link to="/home">Home</Link>
         </Menu.Item>
+        <Menu.Item key="My profile">
+          <Link to="/profile">My profile</Link>
+        </Menu.Item>
+        <Menu.Item key="Raiting">
+          <Link to="/raiting">Raiting</Link>
+        </Menu.Item>
         <Menu.Item key="Logout">
           <Button type="link" onClick={logoutHandler}>Logout</Button>
         </Menu.Item>
