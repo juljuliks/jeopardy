@@ -134,17 +134,17 @@ module.exports = {
       {
         categoryId: 6,
         questionBody: 'Что не может храниться в массивах?',
-        pricePoint: 400,
-      },
-      {
-        categoryId: 6,
-        questionBody: 'Cвойсво length массивов является readonly, верно?',
         pricePoint: 200,
       },
       {
         categoryId: 6,
-        questionBody: 'Какой из перечисленных методов мутирует массив?',
+        questionBody: 'Cвойсво length массивов является readonly, верно?',
         pricePoint: 300,
+      },
+      {
+        categoryId: 6,
+        questionBody: 'Какой из перечисленных методов мутирует массив?',
+        pricePoint: 400,
       },
       {
         categoryId: 6,
@@ -154,6 +154,162 @@ module.exports = {
       {
         categoryId: 6,
         questionBody: 'Какого из перечисленных методов массивов не существует?',
+        pricePoint: 600,
+      },
+
+      {
+        categoryId: 7,
+        questionBody: 'Что возвращает метод Fetch?',
+        pricePoint: 200,
+      },
+      {
+        categoryId: 7,
+        questionBody: 'Kакой метод позволяет указать функцию которая отработает когда промис будет выполнен вне зависимости успешно или с ошибкой?',
+        pricePoint: 300,
+      },
+      {
+        categoryId: 7,
+        questionBody: 'Bнутри промиса уже был выполнен resolve. что произойдет при попытке внутри этого же выполнения промиса еще раз в коде попытаться вызвать resolve или reject?',
+        pricePoint: 400,
+      },
+      {
+        categoryId: 7,
+        questionBody: 'Можно ли использовать ключевое слово await при объявлении for/of циклов?',
+        pricePoint: 500,
+      },
+      {
+        categoryId: 7,
+        questionBody: 'Mожно ли использовать await внутри функций объявленных без async?',
+        pricePoint: 600,
+      },
+
+      {
+        categoryId: 8,
+        questionBody: 'В чем отличие между локальной и глобальной переменной?',
+        pricePoint: 200,
+      },
+      {
+        categoryId: 8,
+        questionBody: 'Какое ключевое слово создает переменные, область видимости которых не ограничивается блоками?',
+        pricePoint: 300,
+      },
+      {
+        categoryId: 8,
+        questionBody: 'Если переменная объявленна внутри функции с помощью ключевого слова var может ли она быть доступна снаружи этой функции?',
+        pricePoint: 400,
+      },
+      {
+        categoryId: 8,
+        questionBody: 'Что будет выведено в консоль : for (var i = 0; i < 10; i++){}; console.log(i) ?',
+        pricePoint: 500,
+      },
+      {
+        categoryId: 8,
+        questionBody: 'Выберите неверное утверждение о let и const:',
+        pricePoint: 600,
+      },
+
+      {
+        categoryId: 9,
+        questionBody: 'Возможно ли вертикально отцентрировать статический элемент с помощью margin:auto?',
+        pricePoint: 200,
+      },
+      {
+        categoryId: 9,
+        questionBody: 'С помощью какой пары свойство:значение можно без js сверстать хедер, который при скролле “цепляется” за край экрана?',
+        pricePoint: 300,
+      },
+      {
+        categoryId: 9,
+        questionBody: 'Какое правило позволяет загрузить шрифт для отображения текста',
+        pricePoint: 400,
+      },
+      {
+        categoryId: 9,
+        questionBody: 'Перед значением какого под-свойства в сокращенном свойстве background должен стоять символ "/"?',
+        pricePoint: 500,
+      },
+      {
+        categoryId: 9,
+        questionBody: 'Функции contrast() и blur() используются в свойстве…',
+        pricePoint: 600,
+      },
+
+      {
+        categoryId: 10,
+        questionBody: 'Если селектору, переданному в querySelector cooтветсвует несколько элементов, что этот метод вернет?',
+        pricePoint: 200,
+      },
+      {
+        categoryId: 10,
+        questionBody: 'Mетод Node.appendChild добавялет узел:',
+        pricePoint: 300,
+      },
+      {
+        categoryId: 10,
+        questionBody: 'Cвойство Node.parentElement: ',
+        pricePoint: 400,
+      },
+      {
+        categoryId: 10,
+        questionBody: 'Как проверить, был ли использован Event.preventDefault()?',
+        pricePoint: 500,
+      },
+      {
+        categoryId: 10,
+        questionBody: 'Вызов setInterval(func, 100) вызовет func…',
+        pricePoint: 600,
+      },
+
+      {
+        categoryId: 11,
+        questionBody: 'Hа что ссылается this в метода объекта если метод вызван напрямую, т.е obj.method?',
+        pricePoint: 200,
+      },
+      {
+        categoryId: 11,
+        questionBody: 'У каких функций нет this?',
+        pricePoint: 300,
+      },
+      {
+        categoryId: 11,
+        questionBody: 'Kакое утверждение не верно?',
+        pricePoint: 400,
+      },
+      {
+        categoryId: 11,
+        questionBody: 'Чему равняется this вне объектов, методов и функций и прочего в строгом режиме?',
+        pricePoint: 500,
+      },
+      {
+        categoryId: 11,
+        questionBody: 'Возможно ли использовать метод .bind для привязки this для стрелочной функции?',
+        pricePoint: 600,
+      },
+
+      {
+        categoryId: 12,
+        questionBody: 'Какую часть шаблона проектирования MVC реализует React.js?',
+        pricePoint: 200,
+      },
+      {
+        categoryId: 12,
+        questionBody: 'Перерисовывает ли React всё view когда изминелись props или состояние?',
+        pricePoint: 300,
+      },
+      {
+        categoryId: 12,
+        questionBody: 'Какой атрибут обязателен при рендеринге компонентов списка?',
+        pricePoint: 400,
+      },
+      {
+        categoryId: 12,
+        questionBody: 'Что такое подъем состояния вверх?',
+        pricePoint: 500,
+      },
+      {
+        categoryId: 12,
+        questionBody: 'Что такое props.children?',
         pricePoint: 600,
       },
 
