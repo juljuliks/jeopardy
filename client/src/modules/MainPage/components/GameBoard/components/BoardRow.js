@@ -1,6 +1,7 @@
+/* eslint-disable no-unused-vars */
 import styled from 'styled-components';
 import { Card } from 'antd';
-import QuestionModal from './QuestionModal';
+import CustomCard from './Card';
 
 const Row = styled.div`
 display: flex;
@@ -11,12 +12,20 @@ const gridStyle = {
   textAlign: 'center',
 };
 
-export default function BoardRow({ rowData }) {
+export default function BoardRow({
+  category, onCardClick,
+}) {
   return (
     <Row>
-      <Card.Grid hoverable={false} style={gridStyle}>{rowData.categoryName}</Card.Grid>
-      {rowData.questions.map((question) => (
-        <QuestionModal key={question.id} question={question} />
+      <Card.Grid hoverable={false} style={gridStyle}>
+        {category.categoryName}
+      </Card.Grid>
+      {category.questions.map((question) => (
+        <CustomCard
+          key={question.id}
+          question={question}
+          onCardClick={onCardClick}
+        />
       ))}
     </Row>
   );
