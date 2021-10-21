@@ -27,7 +27,7 @@ export default function CustomCard({ question, onCardClick }) {
   return (
     <Card.Grid
       onClick={clickHandler}
-      style={isCardDisabled ? { ...gridStyle, backgroundColor: 'gray', color: 'white' } : gridStyle}
+      style={isCardDisabled ? { ...gridStyle, backgroundColor: `${question.isCorrect ? 'green' : 'red'}`, color: 'white' } : gridStyle}
     >
       {question.pricePoint}
     </Card.Grid>

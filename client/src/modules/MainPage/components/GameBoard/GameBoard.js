@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-array-index-key */
 import { useDispatch, useSelector } from 'react-redux';
@@ -49,8 +50,18 @@ export default function GameBoard() {
     if (question.id) {
       setIsModalVisible(false);
       if (selectedAnswer.isCorrect) {
+        setQuestion((prev) => {
+          prev.isCorrect = true;
+          return prev;
+        });
+        console.log({ question });
         dispatch(updateGame({ category: question.categoryId, pricePoint: question.pricePoint }));
       } else {
+        setQuestion((prev) => {
+          prev.isCorrect = false;
+          return prev;
+        });
+        console.log({ question });
         dispatch(updateGame({ category: question.categoryId, pricePoint: 0 }));
       }
     } else {
