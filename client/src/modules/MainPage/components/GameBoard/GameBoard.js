@@ -54,14 +54,12 @@ export default function GameBoard() {
           prev.isCorrect = true;
           return prev;
         });
-        console.log({ question });
         dispatch(updateGame({ category: question.categoryId, pricePoint: question.pricePoint }));
       } else {
         setQuestion((prev) => {
           prev.isCorrect = false;
           return prev;
         });
-        console.log({ question });
         dispatch(updateGame({ category: question.categoryId, pricePoint: 0 }));
       }
     } else {
