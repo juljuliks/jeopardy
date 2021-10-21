@@ -2,7 +2,7 @@ const express = require('express');
 const logger = require('morgan');
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
-
+const path = require('path');
 const authRouter = require('./routes/authRouter');
 const questionRouter = require('./routes/questionRouter');
 const statsRouter = require('./routes/statsRouter');
@@ -11,7 +11,7 @@ const buildHtml = path.resolve(process.env.PWD, '..', 'client', 'build', 'index.
 const buildStatic = path.resolve(process.env.PWD, '..', 'client', 'build');
 const serverStatic = path.resolve(process.env.PWD, 'public');
 
-const PORT = process.env.PORT ?? 5000;
+const PORT = process.env.PORT ?? 4000;
 
 const sessionConfig = {
   store: new FileStore(),
