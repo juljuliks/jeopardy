@@ -73,7 +73,7 @@ export default function GameBoard() {
 
   return (
     <>
-      <div style={{ width: 800 }}>
+      <div style={{ width: 1000 }}>
         {categories ? categories.map((category, index) => (
           <BoardRow
             key={index}
