@@ -17,7 +17,7 @@
 <br/>
 <br/>
 
-- Фронтенд: React, JS, Ant Design
+- Фронтенд: React, Redux, JS, Ant Design
 - Бэкенд: Node.js, Express, Sessions, PostgreSQL, Sequlize ORM
 
 ## Пробежимся по функционалу
