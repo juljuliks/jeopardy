@@ -35,7 +35,7 @@
 
 #### А также есть рейтинг среди всех игроков
 
-[<img align="center" alt="Jeopardy" src="/readme-assets/4.png"/>][heroku]
+[<img align="center" alt="Jeopardy" src="/readme-assets/5.png"/>][heroku]
 
 [git]: https://github.com/juljuliks/jeopardy
 [heroku]: https://jeopardy-web-game.herokuapp.com/
