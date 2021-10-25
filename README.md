@@ -23,19 +23,19 @@
 ## Пробежимся по функционалу
 #### На главной странице находятся все доступные вопросы по категориям
 
-[<img align="center" alt="Jeopardy" width="32px" src="/readme-assets/1.png"/>][heroku]
+[<img align="center" alt="Jeopardy" src="/readme-assets/1.png"/>][heroku]
 
 #### При нажатии на ячейку открывается вопрос по выбранной категории
 
-[<img align="center" alt="Jeopardy" width="32px" src="/readme-assets/2.png"/>][heroku]
+[<img align="center" alt="Jeopardy" src="/readme-assets/2.png"/>][heroku]
 
 #### В личном кабинете отображаются данные последней игры
 
-[<img align="center" alt="Jeopardy" width="32px" src="/readme-assets/3.png"/>][heroku]
+[<img align="center" alt="Jeopardy" src="/readme-assets/3.png"/>][heroku]
 
 #### А также есть рейтинг среди всех игроков
 
-[<img align="center" alt="Jeopardy" width="32px" src="/readme-assets/4.png"/>][heroku]
+[<img align="center" alt="Jeopardy" src="/readme-assets/4.png"/>][heroku]
 
 [git]: https://github.com/juljuliks/jeopardy
 [heroku]: https://jeopardy-web-game.herokuapp.com/
