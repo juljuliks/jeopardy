@@ -9,7 +9,6 @@ const { Header } = Layout;
 export default function Navbar({ isAuth }) {
   const dispatch = useDispatch();
 
-  console.log({ isAuth });
   function logoutHandler() {
     fetch('/auth/logout')
       .then(() => dispatch(logoutUser()));

@@ -1,6 +1,7 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-array-index-key */
+import { Spin } from 'antd';
 import { useHistory } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
@@ -80,7 +81,7 @@ export default function GameBoard() {
             category={category}
             onCardClick={showModal}
           />
-        )) : 'no data, yet'}
+        )) : <Spin/>}
       </div>
       <QuestionModal
         isModalVisible={isModalVisible}

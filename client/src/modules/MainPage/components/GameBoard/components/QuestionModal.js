@@ -32,7 +32,7 @@ export default function QuestionModal(props) {
 
   return (
     <Modal
-      title="Basic Modal"
+      title="Вопрос:"
       visible={isModalVisible}
       onOk={handleOk}
       onCancel={handleCancel}

@@ -23,8 +23,6 @@ export default function RaitingPage() {
   const user = useSelector((state) => state.user);
   const [data, setData] = useState([]);
 
-  console.log(user);
-
   useEffect(() => {
     if (!user.id) return;
     fetch(`/api/stats/${user.id}`)
@@ -32,8 +30,13 @@ export default function RaitingPage() {
       .then(setData);
   }, [user.id]);
 
+  let totalScore = data.reduce((acc, cur) => acc + cur.categoryScore, 0)
+
   return (
     <Container>
+      <h2>
+        Total of your last game: {totalScore}
+      </h2>
       <Table columns={columns} dataSource={data} />
     </Container>
   );
